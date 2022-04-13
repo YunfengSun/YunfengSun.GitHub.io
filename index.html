@@ -73,6 +73,72 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-重装系统遇到的问题 " class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/13/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%20/" class="article-date">
+  <time class="dt-published" datetime="2022-04-13T15:00:13.362Z" itemprop="datePublished">2022-04-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="重装系统遇到的问题"><a href="#重装系统遇到的问题" class="headerlink" title="重装系统遇到的问题"></a>重装系统遇到的问题</h1><h3 id="Win10"><a href="#Win10" class="headerlink" title="Win10"></a>Win10</h3><p><strong>1.遇到MBR或GPT分区表错误问题</strong></p>
+<p>首先这两个分区表是不同的，MBR只支持UFEI启动模式，而GPT可以支持UEFI启动和Legcy启动模式（注：是否支持UEFI启动模式需要启动BIOS查看）。如果在选择安装介质界面遇到这个问题，使用以下方法即可：</p>
+<ol>
+<li>按住“shift + f10”进入cmd窗口；</li>
+<li>输入“diskpart”进入磁盘管理模式；</li>
+<li>输入“list disk”，查看电脑中的磁盘，看具体容量即可；</li>
+<li>输入“select disk *(**表示磁盘序号)”，选中需要的磁盘；</li>
+<li>输入“list partition”，查看磁盘中的分区；</li>
+<li>输入“selcet partition *”，选择自己系统要安装的分区；</li>
+<li>输入“convert mbr（如果要转换为gpt格式，则替换为gpt）”，转换分区表格式；</li>
+<li>输入“exit”，退出diskpart模式；再次输入“exit”，退出cmd窗口。</li>
+</ol>
+<p><strong>2.遇到如下错误：“计算机意外的重新启动或遇到错误。Windows安装无法继续。若要安装Windows，请单击“确定”重新启动计算机，然后安装系统。”</strong></p>
+<p>首先这个问题大部分是由于在安装操作系统时候出现突然断电或者其他情况导致中断产生的，大部分的第一个解决办法如下</p>
+<ol>
+<li>按住“shfit + f10”，打开cmd窗口；</li>
+<li>输入“cd &#x2F;”，移动目录到主分区下；</li>
+<li>输入“Windows\system32\oobe\”，移动目录到oobe下；</li>
+<li>输入“msoobe”，打开msoobe；</li>
+</ol>
+<p>按照上述方法会进去到“海内存知己，天涯若比邻”界面，并且无限卡住，此时强制关机，重启出现同样的错误，正确的做法如下：</p>
+<ol>
+<li>按住“shfit + f10”，打开cmd窗口；</li>
+<li>输入“regedit”，打开注册表界面，找到注册表HKEY_LOCAL_MACHINE\SYSTEM\SETUP\STATUS\ChildCompletion下SETUP.exe，双击改变数值为3，退出。</li>
+<li>重新启动即可。</li>
+</ol>
+<h3 id="Win7"><a href="#Win7" class="headerlink" title="Win7"></a>Win7</h3><p><strong>1.遇到找不到USB驱动程序，无法安装的问题？</strong></p>
+<p>这个问题是由于WIN7的镜像文件只含有USB2.0的驱动程序，无USB3.0的驱动程序，故无法安装，解决方法如下：<br>方法一：换个USB2.0的口安装，一般笔记本电脑都存在USB2.0的口；</p>
+<p>方法二：找到intel官网（此方法只适用于intel处理器的电脑），下载win7的USB3.0驱动程序，网站在最后，可以直接点击下载，使用方法如下：</p>
+<p>官网链接：<a target="_blank" rel="noopener" href="https://downloadcenter.intel.com/zh-cn/download/25476/Windows7-USB3-0Creator">https://downloadcenter.intel.com/zh-cn/download/25476/Windows7-USB3-0Creator</a></p>
+<ol>
+<li>解压压缩包；</li>
+<li>以管理员模式打开nstaller_Creator.exe程序；</li>
+<li>USB drive path选择为你系统盘的盘符；</li>
+<li>点击“create image”后等待半小时左右（intel官方给出的时间为15min）；</li>
+<li>在log日志中出现“Update finished”即完成安装，退出。</li>
+</ol>
+<p>如果遇到其他问题，欢迎咨询，邮箱地址：<a href="mailto:&#49;&#52;&#51;&#x38;&#x31;&#x39;&#53;&#48;&#x39;&#x35;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;">&#49;&#52;&#51;&#x38;&#x31;&#x39;&#53;&#48;&#x39;&#x35;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yunfengsun.github.io/2022/04/13/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%20/" data-id="cl1xpahne0000j8vs36mggqxz" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-essay" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/04/11/essay/" class="article-date">
@@ -140,6 +206,10 @@ Date 2022/04/10
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/04/13/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%20/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2022/04/11/essay/">(no title)</a>
