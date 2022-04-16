@@ -84,7 +84,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
   </ul>
 </nav>
 
@@ -120,6 +120,8 @@
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yunfeng Sun"
+      src="/images/header.jpg">
   <p class="site-author-name" itemprop="name">Yunfeng Sun</p>
   <div class="site-description" itemprop="description">A Dog of Chemical Engineering</div>
 </div>
@@ -178,7 +180,7 @@
     <link itemprop="mainEntityOfPage" href="https://yunfengsun.github.io/2022/04/14/Github%20pages%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/header.jpg">
       <meta itemprop="name" content="Yunfeng Sun">
     </span>
 
@@ -193,7 +195,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/14/Github%20pages%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2022/04/14/Github%20pages%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">Github pages博客平台搭建</a>
         </h2>
 
         <div class="post-meta-container">
@@ -203,9 +205,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-04-14 19:44:00 / 修改时间：11:43:40" itemprop="dateCreated datePublished" datetime="2022-04-14T19:44:00+08:00">2022-04-14</time>
+      <time title="创建时间：2022-04-14 19:44:00" itemprop="dateCreated datePublished" datetime="2022-04-14T19:44:00+08:00">2022-04-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-17 02:41:33" itemprop="dateModified" datetime="2022-04-17T02:41:33+08:00">2022-04-17</time>
     </span>
 
   
@@ -218,7 +226,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Github-pages博客平台搭建"><a href="#Github-pages博客平台搭建" class="headerlink" title="Github pages博客平台搭建"></a>Github pages博客平台搭建</h1><h3 id="静态Blog框架的选择（Hexo-amp-Jekyll）"><a href="#静态Blog框架的选择（Hexo-amp-Jekyll）" class="headerlink" title="静态Blog框架的选择（Hexo &amp; Jekyll）"></a>静态Blog框架的选择（Hexo &amp; Jekyll）</h3><p>首先说一下我的选择——Hexo。</p>
+          <h3 id="静态Blog框架的选择（Hexo-amp-Jekyll）"><a href="#静态Blog框架的选择（Hexo-amp-Jekyll）" class="headerlink" title="静态Blog框架的选择（Hexo &amp; Jekyll）"></a>静态Blog框架的选择（Hexo &amp; Jekyll）</h3><p>首先说一下我的选择——Hexo。</p>
 <ul>
 <li>Jekyll基于Ruby实现，需要搭建Ruby环境；而Hexo是基于NodeJs实现的，在windows上安装NodeJs比较简单；</li>
 <li>Hexo中的Next主题，经典中的经典；</li>
@@ -229,8 +237,8 @@
 <h3 id="如何搭建Github-pages博客"><a href="#如何搭建Github-pages博客" class="headerlink" title="如何搭建Github pages博客"></a>如何搭建Github pages博客</h3><p><strong>1.注册github账户</strong></p>
 <p>首先你得有一个Github账号，github官网：<a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a> 。</p>
 <p>登入自己的账号后，</p>
-<p><img src="/Github%20pag%200ed9d/1649931953(1).png" alt="1649931953(1).png"></p>
-<p><img src="/Github%20pag%200ed9d/1649932257(1).jpg" alt="1649932257(1).jpg"></p>
+<p><img src="/images/photo/1.png" alt="1.png"></p>
+<p><img src="/images/photo/2.jpg" alt="2.jpg"></p>
 <p>直接点击creat repository就可以了，这时候输入自己的用户名.github.io就可以看到自己的一个简单的博客，是readme.md文件中的内容。例如，我的Yunfengsun.github.io 。</p>
 <p><strong>2.安装 Node.js</strong></p>
 <p>网址：<a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
@@ -247,7 +255,7 @@
 <p>输入“hexo init”将文件夹初始化为一个博客文件夹，再输入“npm install”安装依赖；</p>
 <p>输入“hexo g”生成网页，初始网页为hexo自带的hello world的博客。 </p>
 <p>输入“hexo s”将生成的网页放在本地服务器上，打开浏览器输入：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> ，即可看到自己的网页。ctrl + C关闭本地服务。</p>
-<p><img src="/Github%20pag%200ed9d/1649935177(1).png" alt="1649935177(1).png"></p>
+<p><img src="/images/photo/3.png" alt="3.png"></p>
 <p><strong>6.发布一篇自己的博客</strong></p>
 <p>在创建的文件夹下打开source&#x2F;_posts，在里面新建markdown文件，例如（first.md），后输入“hexo g”，再输入“hexo s”，打开浏览器输入“<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> ”，就可以看到自己创建的内容了。</p>
 <p><strong>7.将本地 Hexo 博客部署在 Github 上</strong></p>
@@ -262,7 +270,7 @@
 
 <p>注意：在”：“后面存在一个空格。</p>
 <p>重新编译上传即可。当然，如果需要其他主题也可以访问<a target="_blank" rel="noopener" href="https://hexo.io/themes/%E8%BF%9B%E8%A1%8C%E4%B8%8B%E8%BD%BD%EF%BC%8Chexo%E5%AE%98%E7%BD%91%E4%B8%AD%E4%B9%9F%E6%9C%89%E5%85%B3%E4%BA%8E%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%B4%E6%98%8E%EF%BC%8C%E4%BD%86%E6%98%AF%E5%AF%B9%E4%BA%8E%E7%9F%A5%E8%AF%86%E6%8E%8C%E6%8F%A1%E7%A8%8B%E5%BA%A6%E6%AF%94%E8%BE%83%E9%AB%98%EF%BC%8C%E9%9C%80%E8%A6%81%E8%8A%B1%E8%B4%B9%E8%BE%83%E9%95%BF%E6%97%B6%E9%97%B4%EF%BC%8C%E4%B8%8D%E5%A4%AA%E5%BB%BA%E8%AE%AE%E6%95%B4%E8%BF%99%E4%B8%AA%E3%80%82">https://hexo.io/themes/进行下载，hexo官网中也有关于如何创建自己主题的说明，但是对于知识掌握程度比较高，需要花费较长时间，不太建议整这个。</a></p>
-<p>如有错误，或者问题需要咨询，邮箱地址为：<a href="mailto:&#49;&#52;&#x33;&#x38;&#x31;&#57;&#x35;&#48;&#57;&#53;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#109;">&#49;&#52;&#x33;&#x38;&#x31;&#57;&#x35;&#48;&#57;&#53;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#109;</a></p>
+<p>如有错误，或者问题需要咨询，邮箱地址为：<a href="mailto:&#49;&#52;&#51;&#56;&#49;&#57;&#x35;&#48;&#x39;&#53;&#64;&#113;&#x71;&#x2e;&#x63;&#111;&#109;">&#49;&#52;&#51;&#56;&#49;&#57;&#x35;&#48;&#x39;&#53;&#64;&#113;&#x71;&#x2e;&#x63;&#111;&#109;</a></p>
 
       
     </div>
@@ -292,7 +300,7 @@
     <link itemprop="mainEntityOfPage" href="https://yunfengsun.github.io/2022/04/13/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/header.jpg">
       <meta itemprop="name" content="Yunfeng Sun">
     </span>
 
@@ -307,7 +315,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/13/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%20/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2022/04/13/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%20/" class="post-title-link" itemprop="url">重装系统遇到的问题</a>
         </h2>
 
         <div class="post-meta-container">
@@ -317,9 +325,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-04-13 23:00:13 / 修改时间：23:00:18" itemprop="dateCreated datePublished" datetime="2022-04-13T23:00:13+08:00">2022-04-13</time>
+      <time title="创建时间：2022-04-13 23:00:13" itemprop="dateCreated datePublished" datetime="2022-04-13T23:00:13+08:00">2022-04-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-17 02:28:23" itemprop="dateModified" datetime="2022-04-17T02:28:23+08:00">2022-04-17</time>
     </span>
 
   
@@ -332,7 +346,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="重装系统遇到的问题"><a href="#重装系统遇到的问题" class="headerlink" title="重装系统遇到的问题"></a>重装系统遇到的问题</h1><h3 id="Win10"><a href="#Win10" class="headerlink" title="Win10"></a>Win10</h3><p><strong>1.遇到MBR或GPT分区表错误问题</strong></p>
+          <h3 id="Win10"><a href="#Win10" class="headerlink" title="Win10"></a>Win10</h3><p><strong>1.遇到MBR或GPT分区表错误问题</strong></p>
 <p>首先这两个分区表是不同的，MBR只支持UFEI启动模式，而GPT可以支持UEFI启动和Legcy启动模式（注：是否支持UEFI启动模式需要启动BIOS查看）。如果在选择安装介质界面遇到这个问题，使用以下方法即可：</p>
 <ol>
 <li>按住“shift + f10”进入cmd窗口；</li>
@@ -369,7 +383,7 @@
 <li>点击“create image”后等待半小时左右（intel官方给出的时间为15min）；</li>
 <li>在log日志中出现“Update finished”即完成安装，退出。</li>
 </ol>
-<p>如果遇到其他问题，欢迎咨询，邮箱地址：<a href="mailto:&#49;&#x34;&#x33;&#x38;&#x31;&#x39;&#x35;&#x30;&#57;&#53;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#109;">&#49;&#x34;&#x33;&#x38;&#x31;&#x39;&#x35;&#x30;&#57;&#53;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#109;</a></p>
+<p>如果遇到其他问题，欢迎咨询，邮箱地址：<a href="mailto:&#49;&#52;&#51;&#56;&#49;&#57;&#53;&#x30;&#57;&#53;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#109;">&#49;&#52;&#51;&#56;&#49;&#57;&#53;&#x30;&#57;&#53;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#109;</a></p>
 
       
     </div>
@@ -399,7 +413,7 @@
     <link itemprop="mainEntityOfPage" href="https://yunfengsun.github.io/2022/04/11/essay/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/header.jpg">
       <meta itemprop="name" content="Yunfeng Sun">
     </span>
 
@@ -414,7 +428,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/11/essay/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/2022/04/11/essay/" class="post-title-link" itemprop="url">关于学习这件事</a>
         </h2>
 
         <div class="post-meta-container">
@@ -424,9 +438,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-04-11 00:31:23 / 修改时间：00:40:42" itemprop="dateCreated datePublished" datetime="2022-04-11T00:31:23+08:00">2022-04-11</time>
+      <time title="创建时间：2022-04-11 00:31:23" itemprop="dateCreated datePublished" datetime="2022-04-11T00:31:23+08:00">2022-04-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-17 02:28:25" itemprop="dateModified" datetime="2022-04-17T02:28:25+08:00">2022-04-17</time>
     </span>
 
   
@@ -439,10 +459,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <center>关于学习这件事</center>
-Date 2022/04/10
-
-<p>从小学到大学，算起来读了十六年书了。</p>
+          <p>从小学到大学，算起来读了十六年书了。</p>
 <pre><code>    小学    学习什么
     初中    怎么去学
     高中    更好的去学习
