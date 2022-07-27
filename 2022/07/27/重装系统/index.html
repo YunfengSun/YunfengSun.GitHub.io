@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yunfengsun.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Win101.遇到MBR或GPT分区表错误问题 首先这两个分区表是不同的，MBR只支持UFEI启动模式，而GPT可以支持UEFI启动和Legcy启动模式（注：是否支持UEFI启动模式需要启动BIOS查看）。如果在选择安装介质界面遇到这个问题，使用以下方法即可：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重装系统遇到的问题">
+<meta property="og:url" content="https://yunfengsun.github.io/2022/07/27/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="Sun&#39; Blog">
+<meta property="og:description" content="Win101.遇到MBR或GPT分区表错误问题 首先这两个分区表是不同的，MBR只支持UFEI启动模式，而GPT可以支持UEFI启动和Legcy启动模式（注：是否支持UEFI启动模式需要启动BIOS查看）。如果在选择安装介质界面遇到这个问题，使用以下方法即可：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-27T01:52:25.774Z">
+<meta property="article:modified_time" content="2022-05-28T03:23:22.754Z">
+<meta property="article:author" content="Yunfeng Sun">
+<meta property="article:tag" content="problem">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://yunfengsun.github.io/2022/07/27/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yunfengsun.github.io/2022/07/27/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/","path":"2022/07/27/重装系统/","title":"重装系统遇到的问题"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>重装系统遇到的问题 | Sun' Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sun' Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Changing The World</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Win10"><span class="nav-number">1.</span> <span class="nav-text">Win10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Win7"><span class="nav-number">2.</span> <span class="nav-text">Win7</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yunfeng Sun"
+      src="/images/header.jpg">
+  <p class="site-author-name" itemprop="name">Yunfeng Sun</p>
+  <div class="site-description" itemprop="description">A Dog of Chemical Engineering</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YunfengSun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YunfengSun" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:redamancy.sunyunfeng@gmail.com" title="E-Mail → mailto:redamancy.sunyunfeng@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yunfengsun.github.io/2022/07/27/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.jpg">
+      <meta itemprop="name" content="Yunfeng Sun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sun' Blog">
+      <meta itemprop="description" content="A Dog of Chemical Engineering">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="重装系统遇到的问题 | Sun' Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          重装系统遇到的问题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-27 09:52:25" itemprop="dateCreated datePublished" datetime="2022-07-27T09:52:25+08:00">2022-07-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-28 11:23:22" itemprop="dateModified" datetime="2022-05-28T11:23:22+08:00">2022-05-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="Win10"><a href="#Win10" class="headerlink" title="Win10"></a>Win10</h3><p><strong>1.遇到MBR或GPT分区表错误问题</strong></p>
+<p style="text-indent:2em">首先这两个分区表是不同的，MBR只支持UFEI启动模式，而GPT可以支持UEFI启动和Legcy启动模式（注：是否支持UEFI启动模式需要启动BIOS查看）。如果在选择安装介质界面遇到这个问题，使用以下方法即可：</p>
+<span id="more"></span>
+
+<ol>
+<li>按住“shift + f10”进入cmd窗口；</li>
+<li>输入“diskpart”进入磁盘管理模式；</li>
+<li>输入“list disk”，查看电脑中的磁盘，看具体容量即可；</li>
+<li>输入“select disk *(**表示磁盘序号)”，选中需要的磁盘；</li>
+<li>输入“list partition”，查看磁盘中的分区；</li>
+<li>输入“selcet partition *”，选择自己系统要安装的分区；</li>
+<li>输入“convert mbr（如果要转换为gpt格式，则替换为gpt）”，转换分区表格式；</li>
+<li>输入“exit”，退出diskpart模式；再次输入“exit”，退出cmd窗口。</li>
+</ol>
+<p><strong>2.遇到如下错误：“计算机意外的重新启动或遇到错误。Windows安装无法继续。若要安装Windows，请单击“确定”重新启动计算机，然后安装系统。”</strong></p>
+<p style="text-indent:2em">首先这个问题大部分是由于在安装操作系统时候出现突然断电或者其他情况导致中断产生的，大部分的第一个解决办法如下</p>
+
+<ol>
+<li>按住“shfit + f10”，打开cmd窗口；</li>
+<li>输入“cd &#x2F;”，移动目录到主分区下；</li>
+<li>输入“Windows\system32\oobe\”，移动目录到oobe下；</li>
+<li>输入“msoobe”，打开msoobe；</li>
+</ol>
+<p style="text-indent:2em">按照上述方法会进去到“海内存知己，天涯若比邻”界面，并且无限卡住，此时强制关机，重启出现同样的错误，正确的做法如下：</p>
+
+<ol>
+<li>按住“shfit + f10”，打开cmd窗口；</li>
+<li>输入“regedit”，打开注册表界面，找到注册表HKEY_LOCAL_MACHINE\SYSTEM\SETUP\STATUS\ChildCompletion下SETUP.exe，双击改变数值为3，退出。</li>
+<li>重新启动即可。</li>
+</ol>
+<h3 id="Win7"><a href="#Win7" class="headerlink" title="Win7"></a>Win7</h3><p><strong>1.遇到找不到USB驱动程序，无法安装的问题？</strong></p>
+<p style="text-indent:2em">这个问题是由于WIN7的镜像文件只含有USB2.0的驱动程序，无USB3.0的驱动程序，故无法安装，解决方法如下：</p>
+
+<p>方法一：换个USB2.0的口安装，一般笔记本电脑都存在USB2.0的口；</p>
+<p>方法二：找到intel官网（此方法只适用于intel处理器的电脑），下载win7的USB3.0驱动程序，网站在最后，可以直接点击下载，使用方法如下：</p>
+<p>官网链接：<a target="_blank" rel="noopener" href="https://downloadcenter.intel.com/zh-cn/download/25476/Windows7-USB3-0Creator">https://downloadcenter.intel.com/zh-cn/download/25476/Windows7-USB3-0Creator</a></p>
+<ol>
+<li>解压压缩包；</li>
+<li>以管理员模式打开nstaller_Creator.exe程序；</li>
+<li>USB drive path选择为你系统盘的盘符；</li>
+<li>点击“create image”后等待半小时左右（intel官方给出的时间为15min）；</li>
+<li>在log日志中出现“Update finished”即完成安装，退出。</li>
+</ol>
+<p style="text-indent:2em">如果遇到其他问题，欢迎咨询，邮箱地址：1438195095@qq.com</p>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/problem/" rel="tag"># problem</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/27/%E9%84%99%E8%A7%86/" rel="prev" title="鄙视">
+                  <i class="fa fa-chevron-left"></i> 鄙视
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yunfeng Sun</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

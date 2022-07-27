@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yunfengsun.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="TestDisk 介绍TesiDisk是一款数据恢复软件，经过GPL授权。其具有广泛的功能，能够恢复丢失或损坏的分区和使不能启动磁盘可以重新启动，更常被用来恢复误删的文件。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据恢复——TestDisk">
+<meta property="og:url" content="https://yunfengsun.github.io/2022/07/27/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8DTestDisk/index.html">
+<meta property="og:site_name" content="Sun&#39; Blog">
+<meta property="og:description" content="TestDisk 介绍TesiDisk是一款数据恢复软件，经过GPL授权。其具有广泛的功能，能够恢复丢失或损坏的分区和使不能启动磁盘可以重新启动，更常被用来恢复误删的文件。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yunfengsun.github.io/images/photo/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/01.png">
+<meta property="og:image" content="https://yunfengsun.github.io/images/photo/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/02.png">
+<meta property="og:image" content="https://yunfengsun.github.io/images/photo/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/03.png">
+<meta property="og:image" content="https://yunfengsun.github.io/images/photo/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/04.png">
+<meta property="og:image" content="https://yunfengsun.github.io/images/photo/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/05.png">
+<meta property="og:image" content="https://yunfengsun.github.io/images/photo/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/06.png">
+<meta property="article:published_time" content="2022-07-27T01:52:25.771Z">
+<meta property="article:modified_time" content="2022-06-11T06:49:20.423Z">
+<meta property="article:author" content="Yunfeng Sun">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yunfengsun.github.io/images/photo/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/01.png">
+
+
+<link rel="canonical" href="https://yunfengsun.github.io/2022/07/27/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8DTestDisk/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yunfengsun.github.io/2022/07/27/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8DTestDisk/","path":"2022/07/27/数据恢复TestDisk/","title":"数据恢复——TestDisk"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>数据恢复——TestDisk | Sun' Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sun' Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Changing The World</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#TestDisk-%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">TestDisk 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TestDisk-%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">TestDisk 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TestDisk-%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">TestDisk 使用</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yunfeng Sun"
+      src="/images/header.jpg">
+  <p class="site-author-name" itemprop="name">Yunfeng Sun</p>
+  <div class="site-description" itemprop="description">A Dog of Chemical Engineering</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YunfengSun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YunfengSun" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:redamancy.sunyunfeng@gmail.com" title="E-Mail → mailto:redamancy.sunyunfeng@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yunfengsun.github.io/2022/07/27/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8DTestDisk/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.jpg">
+      <meta itemprop="name" content="Yunfeng Sun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sun' Blog">
+      <meta itemprop="description" content="A Dog of Chemical Engineering">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="数据恢复——TestDisk | Sun' Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据恢复——TestDisk
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-27 09:52:25" itemprop="dateCreated datePublished" datetime="2022-07-27T09:52:25+08:00">2022-07-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-06-11 14:49:20" itemprop="dateModified" datetime="2022-06-11T14:49:20+08:00">2022-06-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="TestDisk-介绍"><a href="#TestDisk-介绍" class="headerlink" title="TestDisk 介绍"></a>TestDisk 介绍</h3><p>TesiDisk是一款数据恢复软件，经过GPL授权。其具有广泛的功能，能够恢复丢失或损坏的分区和使不能启动磁盘可以重新启动，更常被用来恢复误删的文件。</p>
+<span id="more"></span>
+
+<h3 id="TestDisk-安装"><a href="#TestDisk-安装" class="headerlink" title="TestDisk 安装"></a>TestDisk 安装</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install testdisk</span><br></pre></td></tr></table></figure>
+
+<h3 id="TestDisk-使用"><a href="#TestDisk-使用" class="headerlink" title="TestDisk 使用"></a>TestDisk 使用</h3><p>首先打开终端并输入“testdisk”，出现</p>
+<p><img src="/images/photo/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/01.png" alt="01.png"></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[create] create a new log file //创建一个日志文件</span><br><span class="line">[append] append information to log file //从已有的目录文件开始恢复</span><br><span class="line">[No log] Don&#x27;t record anything //不创建日志文件</span><br></pre></td></tr></table></figure>
+
+<p>根据自己的情况选择，一般选择[create]，然后进入下一步：</p>
+<p><img src="/images/photo/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/02.png" alt="02.png"></p>
+<p>这里的意思是选择自己要恢复的文件所在的磁盘，仔细看后面的容量就可以。</p>
+<p>最下方Note的意思为：</p>
+<blockquote>
+<p>注意：必须正确检测磁盘容量才能成功恢复。<br>如果上面列出的磁盘大小不正确，请检查 HD 跳线设置和 BIOS检测，并安装最新的操作系统补丁和磁盘驱动程序。</p>
+</blockquote>
+<p>选择好自己需要恢复的磁盘分区，点击“Process”进入下一个界面（以我自己的U盘为例）：</p>
+<p><img src="/images/photo/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/03.png" alt="03.png"></p>
+<p>在这个界面是检查分区表类型，仔细看下面的提示，根据提示选择，一般选择[Intel]。下方Hint以及Note的意思如下：</p>
+<blockquote>
+<p>提示：已检测到 Intel 分区表类型。<br>注意：不要为只有一个分区的媒体选择“无”。 磁盘“未分区”是非常罕见的。</p>
+</blockquote>
+<p>直接点击回车之后出现选择要进行的工作类型，如下图：</p>
+<p><img src="/images/photo/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/04.png" alt="04.png"></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[analyse ] Analyse current partition structure and search for lost partitions //分析当前的分区结构并搜索丢失的分区</span><br><span class="line">[advanced] Filesystem Utils //文件系统程序（我也没用过）</span><br><span class="line">[Geometry] change disk geometry //更改磁盘几何形状（没用过）</span><br><span class="line">[options ] Modify options //修改选项，就是和应用设置一个意思</span><br><span class="line">[MBR code] Write Testdisk MBR code to first sector //将 Testdisk MBR 代码写入第一个扇区</span><br><span class="line">[Delete  ] Delete all data in the partition table //就是数据不想要了选这个</span><br><span class="line">[Quit    ] return to disk selection //就是选错盘了，想换个盘选这个</span><br></pre></td></tr></table></figure>
+
+<p>底下的提示为：</p>
+<blockquote>
+<p>注意：成功恢复需要正确的磁盘几何结构。 如果“分析”过程认为逻辑几何不匹配，它可能会给出一些警告。</p>
+</blockquote>
+<p>一般要恢复数据直接选择”analyse”，进入如下界面：</p>
+<p><img src="/images/photo/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/05.png" alt="05.png"></p>
+<p>点击“quick search”，这个就是快速搜索所有的文件，然后一直回车回车回车直到出现以下界面：</p>
+<p><img src="/images/photo/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/06.png" alt="06.png"></p>
+<p>等待一段时间就会出现你U盘里面最近删除的文件，选择备份路径即可，最好选择一个空的硬盘进行备份，以防数据丢失。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/27/%E6%88%91%E4%B8%8E%E5%A5%B9/" rel="prev" title="我与她">
+                  <i class="fa fa-chevron-left"></i> 我与她
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/27/%E9%84%99%E8%A7%86/" rel="next" title="鄙视">
+                  鄙视 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yunfeng Sun</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
